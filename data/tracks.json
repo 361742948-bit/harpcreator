@@ -1,0 +1,79 @@
+[
+  {
+    "file": "Evening Fall (Harp).mp3",
+    "title": "Evening Fall (Harp)",
+    "artist": "Kevin MacLeod",
+    "category": "治愈",
+    "level": "入门",
+    "tags": ["竖琴", "治愈", "无歌词"],
+    "license": "CC BY 3.0",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evening_Fall_(Harp)_(ISRC_USUAN1100236).mp3"
+  },
+  {
+    "file": "Thinking Music.mp3",
+    "title": "Thinking Music",
+    "artist": "Kevin MacLeod",
+    "category": "治愈",
+    "level": "进阶",
+    "tags": ["氛围", "长音", "无歌词"],
+    "license": "CC BY 3.0",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thinking_Music_(ISRC_USUAN1600060).mp3"
+  },
+  {
+    "file": "莫扎特 长笛与竖琴协奏曲 第二乐章.mp3",
+    "title": "长笛与竖琴协奏曲 · 第二乐章（节选）",
+    "artist": "W. A. Mozart",
+    "category": "古典",
+    "level": "挑战",
+    "tags": ["古典", "协奏曲", "长笛", "竖琴"],
+    "license": "CC BY-SA 2.0",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mozart_-_Concerto_for_Flute_and_Harp_-_2._Andantino.ogg"
+  },
+  {
+    "file": "街灯下的节奏.mp3",
+    "title": "街灯下的节奏",
+    "artist": "程序合成 · 原创示范",
+    "category": "流行",
+    "level": "进阶",
+    "tags": ["流行", "节奏", "C 大调"],
+    "license": "本项目程序生成，可自由使用",
+    "source": "本地生成",
+    "sourceUrl": ""
+  },
+  {
+    "file": "示范和弦.mp3",
+    "title": "示范和弦 C-Am-F-G",
+    "artist": "程序合成 · 原创示范",
+    "category": "流行",
+    "level": "入门",
+    "tags": ["和声", "练习素材"],
+    "license": "本项目程序生成，可自由使用",
+    "source": "本地生成",
+    "sourceUrl": ""
+  },
+  {
+    "file": "夜灯.mp3",
+    "title": "夜灯",
+    "artist": "程序合成 · 原创示范",
+    "category": "治愈",
+    "level": "入门",
+    "tags": ["钢琴", "A 小调", "慢速"],
+    "license": "本项目程序生成，可自由使用",
+    "source": "本地生成",
+    "sourceUrl": ""
+  },
+  {
+    "file": "雨后.mp3",
+    "title": "雨后",
+    "artist": "程序合成 · 原创示范",
+    "category": "治愈",
+    "level": "进阶",
+    "tags": ["氛围", "D 大调", "铺底"],
+    "license": "本项目程序生成，可自由使用",
+    "source": "本地生成",
+    "sourceUrl": ""
+  }
+]

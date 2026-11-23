@@ -1,0 +1,37 @@
+/*
+ * 嵌入模式样式（?embed=1）。
+ * 只在 iframe 里用时加载：去掉页头页脚和活动栏，压缩外边距，
+ * 让站点看起来像你网站里的一块内容，而不是一个整站。
+ * 不覆盖设计师的 style.css，只做隐藏和间距覆盖。
+ */
+body.embed {
+  padding: 4px 10px 18px;
+}
+
+/* 嵌入时不要整站的页头、页脚、活动栏 */
+body.embed .hero,
+body.embed .foot,
+body.embed #events,
+body.embed #accountBar {
+  display: none !important;
+}
+
+/* 背景光晕在 iframe 里容易溢出，收掉 */
+body.embed .aurora {
+  display: none !important;
+}
+
+body.embed main {
+  max-width: 100%;
+  padding-top: 6px;
+}
+
+body.embed .card {
+  margin-bottom: 12px;
+  border-radius: 14px;
+}
+
+/* 卡片内留白略收一点，避免 iframe 里显得空 */
+body.embed .card {
+  padding: 16px;
+}

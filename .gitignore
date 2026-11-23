@@ -1,0 +1,21 @@
+# 运行时生成的东西，不进仓库
+uploads/
+output/
+generated/
+media/
+posters/
+scores/*
+!scores/.gitkeep
+
+# 隐私与密钥：绝对不能提交
+data/users.json
+data/session_secret.txt
+
+# Python 缓存
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 系统垃圾
+.DS_Store
+*.log

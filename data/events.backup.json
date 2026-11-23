@@ -1,0 +1,234 @@
+{
+  "fetchedAt": "2026-11-21 16:48",
+  "sourceNote": "上海场次由上海乐历自动抓取；杭州/苏州/无锡为人工核实",
+  "events": [
+    {
+      "title": "史蒂文·奥斯本钢琴独奏音乐会",
+      "date": "2026-11-29",
+      "time": "19:30",
+      "city": "上海",
+      "venue": "上海音乐厅",
+      "price": "¥100–¥480",
+      "summary": "钢琴 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_1af19e92e4ee.png",
+      "url": "https://shanghaiconcerts.com/concerts/steven-osborne-piano-recital",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "钢琴",
+      "tags": [
+        "钢琴",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    },
+    {
+      "title": "皮奥特·安德谢夫斯基钢琴独奏会",
+      "date": "2026-12-02",
+      "time": "19:30",
+      "city": "上海",
+      "venue": "上海交响乐团音乐厅",
+      "price": "¥100–¥480",
+      "summary": "钢琴 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_016751a05504.jpg",
+      "url": "https://shanghaiconcerts.com/concerts/piotr-anderszewski-recital",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "钢琴",
+      "tags": [
+        "钢琴",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    },
+    {
+      "title": "无声之声——张楚晗音画钢琴独奏音乐会",
+      "date": "2026-12-05",
+      "time": "19:15",
+      "city": "上海",
+      "venue": "上海交响乐团音乐厅",
+      "price": "¥80–¥380",
+      "summary": "钢琴 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_c038808ca6ad.jpg",
+      "url": "https://shanghaiconcerts.com/concerts/zhang-chuhan-piano-recital-voice-of-silence",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "钢琴",
+      "tags": [
+        "钢琴",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    },
+    {
+      "title": "万川归海——古曲与古诗词今唱主题音乐会",
+      "date": "2026-12-05",
+      "time": "以现场为准",
+      "city": "杭州",
+      "venue": "杭州剧院 · 小剧场",
+      "price": "¥100 起",
+      "summary": "古曲与古诗词今唱主题，民乐编制。票页没有列曲目单，是否以古筝为主需要购票前确认。",
+      "poster": "",
+      "url": "https://www.qianpiaotong.com/mobile/Product/68666.shtml",
+      "source": "购票通 qianpiaotong.com",
+      "tags": [
+        "民乐",
+        "古诗词",
+        "杭州",
+        "民乐"
+      ],
+      "instrument": "民乐"
+    },
+    {
+      "title": "一个人的古典——安娜·盖纽申涅钢琴独奏音乐会",
+      "date": "2026-12-06",
+      "time": "14:30",
+      "city": "上海",
+      "venue": "上海大剧院·中剧场",
+      "price": "¥100–¥380",
+      "summary": "钢琴 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_6a17a91e23f3.jpg",
+      "url": "https://shanghaiconcerts.com/concerts/anna-geniushene-piano-recital-sgt",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "钢琴",
+      "tags": [
+        "钢琴",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    },
+    {
+      "title": "亚历山大·康托洛夫钢琴独奏音乐会",
+      "date": "2026-12-06",
+      "time": "19:30",
+      "city": "上海",
+      "venue": "上海音乐厅",
+      "price": "¥180–¥580",
+      "summary": "钢琴 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_2609fe60459d.jpg",
+      "url": "https://shanghaiconcerts.com/concerts/alexandre-kantorow-piano-recital",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "钢琴",
+      "tags": [
+        "钢琴",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    },
+    {
+      "title": "扬·利谢茨基钢琴音乐会",
+      "date": "2026-12-09",
+      "time": "19:30",
+      "city": "上海",
+      "venue": "上海交响乐团音乐厅",
+      "price": "¥180–¥480",
+      "summary": "钢琴 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_91aea5e53d1c.jpg",
+      "url": "https://shanghaiconcerts.com/concerts/jan-lisiecki-piano-recital",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "钢琴",
+      "tags": [
+        "钢琴",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    },
+    {
+      "title": "斯蒂芬·霍夫钢琴独奏音乐会",
+      "date": "2026-12-11",
+      "time": "19:30",
+      "city": "上海",
+      "venue": "上海音乐厅",
+      "price": "¥80–¥580",
+      "summary": "钢琴 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_a8424055c6c8.jpg",
+      "url": "https://shanghaiconcerts.com/concerts/stephen-hough-piano-recital",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "钢琴",
+      "tags": [
+        "钢琴",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    },
+    {
+      "title": "《弦上秦风》——陕派民乐作品音乐会（苏州站）",
+      "date": "2026-12-11",
+      "time": "以现场为准",
+      "city": "苏州",
+      "venue": "苏州聚橙尹山湖大剧院",
+      "price": "¥80 起",
+      "summary": "陕派民乐作品专场。陕西筝派（秦筝）是古筝重要流派，但这张票页没写具体曲目，建议先看曲目单再买。",
+      "poster": "",
+      "url": "https://www.goupiaotong.com.cn/mobile/Product/69536.shtml",
+      "source": "购票通 goupiaotong.com.cn",
+      "tags": [
+        "民乐",
+        "陕派",
+        "苏州",
+        "民乐"
+      ],
+      "instrument": "民乐"
+    },
+    {
+      "title": "真理的告白——陈必先钢琴独奏音乐会",
+      "date": "2026-12-13",
+      "time": "19:15",
+      "city": "上海",
+      "venue": "上海交响乐团音乐厅",
+      "price": "¥100–¥480",
+      "summary": "钢琴 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_8150883f34f0.jpg",
+      "url": "https://shanghaiconcerts.com/concerts/chen-pi-hsien-a-confession-of-truth",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "钢琴",
+      "tags": [
+        "钢琴",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    },
+    {
+      "title": "未来大师：心的形状——竖琴与萨克斯二重奏音乐会",
+      "date": "2026-12-13",
+      "time": "以现场为准",
+      "city": "上海",
+      "venue": "上海东方艺术中心",
+      "price": "以购票页为准",
+      "summary": "竖琴 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_1480ea033ebc.png",
+      "url": "https://shanghaiconcerts.com/concerts/future-masters-shape-of-my-heart-harp-saxophone-duo",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "竖琴",
+      "tags": [
+        "竖琴",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    },
+    {
+      "title": "【玲珑国乐】筝韵流芳——浙派古筝音乐会",
+      "date": "2026-12-27",
+      "time": "14:00",
+      "city": "上海",
+      "venue": "上海音乐厅",
+      "price": "¥180",
+      "summary": "古筝 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_3dad7fec71fe.jpg",
+      "url": "https://shanghaiconcerts.com/concerts/linglong-guoyue-zhejiang-guzheng",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "古筝",
+      "tags": [
+        "古筝",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    }
+  ]
+}

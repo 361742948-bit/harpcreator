@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>星声 · 变调工坊</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <!-- 让 hidden 属性可靠生效：.filters 的 display:flex 会盖掉浏览器的 [hidden] 规则 -->
+  <style>[hidden] { display: none !important; }</style>
+</head>
+<body>
+  <div class="aurora"><div class="hall"></div></div>
+
+  <header class="hero">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="brand-frame" x1="30" y1="10" x2="92" y2="110" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FF8FC0"/><stop offset="0.46" stop-color="#8B76FF"/><stop offset="1" stop-color="#6F56E8"/>
+          </linearGradient>
+          <linearGradient id="brand-string" x1="40" y1="20" x2="90" y2="100" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FFA9CD"/><stop offset="0.5" stop-color="#A99AF7"/><stop offset="1" stop-color="#C9B8FF"/>
+          </linearGradient>
+        </defs>
+        <g stroke-linecap="round" stroke-linejoin="round">
+          <path d="M38 14 V106" stroke="url(#brand-frame)" stroke-width="6"/>
+          <path d="M38 14 C62 14 83 22 89 40" stroke="url(#brand-frame)" stroke-width="6"/>
+          <path d="M89 40 L58 106 H38" stroke="url(#brand-frame)" stroke-width="6"/>
+          <path d="M46 16 q2 15 0 30 q-2 15 0 30 q2 15 0 26 q-2 12 0 4" stroke="url(#brand-string)" stroke-width="2.2"/>
+          <path d="M57 18 q2 14 0 28 q-2 14 0 28 q2 14 0 26 q-2 12 0 6" stroke="url(#brand-string)" stroke-width="2.2"/>
+          <path d="M68 21 q2 12 0 24 q-2 12 0 24 q2 10 0 15" stroke="url(#brand-string)" stroke-width="2.2"/>
+          <path d="M79 25 q2 9 0 18 q-2 9 0 17" stroke="url(#brand-string)" stroke-width="2.2"/>
+        </g>
+      </svg>
+      <span class="brand-name">星声</span>
+      <span class="brand-en">STAR SOUND LAB</span>
+    </div>
+    <p class="eyebrow">变调 · 竖琴 · 生成</p>
+    <h1>把一首歌，挪到你唱得上的调</h1>
+    <p class="sub">上传本地音频，选原调和目标调（比如 G → 降 E），音高变了、速度不变。原曲和结果都能在这儿试听、下载。</p>
+  </header>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="wing-grad" x1="0" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#C9A227"/><stop offset="0.55" stop-color="#9B7CF0"/><stop offset="1" stop-color="#8B76FF"/>
+      </linearGradient>
+      <symbol id="wing" viewBox="0 0 24 24">
+        <path d="M2.6 20.9 C3.9 11.6 10.2 4.6 21.6 2.4 C20.1 8.9 19.4 13.3 20.4 18.3 C16.9 14.7 13.2 13.2 10.2 13.7 C8.8 17.3 5.9 19.7 2.6 20.9 Z" fill="url(#wing-grad)"/>
+        <path d="M6.4 18.4 C9.1 15.1 12.7 12.2 17.4 9.8" stroke="#ffffff" stroke-opacity="0.55" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+        <path d="M8.6 19.6 C11 17.4 13.6 15.7 16.6 14.6" stroke="#ffffff" stroke-opacity="0.35" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- 免登录：打开就能听，需要补充音乐人时再展开下面那块 -->
+  <div class="filters" id="accountBar">
+    <span class="chip">免登录 · 打开即听</span>
+    <button class="fchip" type="button" id="addMusicianBtn">＋ 添加音乐人</button>
+  </div>
+
+  <main>
+    <!-- ========== 添加音乐人 ========== -->
+    <section class="card" id="addMusicianCard" hidden>
+      <div class="card-head">
+        <h2><svg class="wing" aria-hidden="true"><use href="#wing"/></svg>添加音乐人</h2>
+        <span class="tag">视频会进到对应的乐器栏目</span>
+      </div>
+      <div class="gen-row">
+        <div class="field">
+          <label for="newArtistName">音乐人名字</label>
+          <input class="cname" id="newArtistName" type="text" maxlength="30" placeholder="比如：某某古筝" />
+        </div>
+        <div class="field field-sm">
+          <label for="newArtistInstrument">乐器</label>
+          <select id="newArtistInstrument">
+            <option value="竖琴">竖琴</option>
+            <option value="古筝">古筝</option>
+            <option value="钢琴">钢琴</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="newArtistVideo">视频链接或 ID</label>
+          <input class="cname" id="newArtistVideo" type="text" placeholder="https://www.youtube.com/watch?v=…" />
+        </div>
+        <div class="field">
+          <label for="newArtistTitle">视频标题（可留空）</label>
+          <input class="cname" id="newArtistTitle" type="text" maxlength="80" placeholder="留空就用“名字 的演奏”" />
+        </div>
+      </div>
+      <div class="field" style="margin-bottom:12px">
+        <label for="newArtistNote">备注（可留空）</label>
+        <input class="cname" id="newArtistNote" type="text" maxlength="100" placeholder="比如：曲目、推荐理由" />
+      </div>
+      <button class="primary" type="button" id="addMusicianSubmit">添加</button>
+      <p class="hint" id="addMusicianStatus"></p>
+    </section>
+
+    <!-- ========== 三页叠放：变调 / 乐器欣赏 / 活动分享 ========== -->
+    <div class="deck">
+      <div class="deck-tabs" role="tablist" aria-label="栏目">
+        <button class="deck-tab is-active" type="button" role="tab" aria-selected="true"
+                aria-controls="lab" data-page="lab"><i></i>变调</button>
+        <button class="deck-tab" type="button" role="tab" aria-selected="false"
+                aria-controls="harp" data-page="harp"><i></i>乐器欣赏</button>
+        <button class="deck-tab" type="button" role="tab" aria-selected="false"
+                aria-controls="events" data-page="events"><i></i>活动分享</button>
+      </div>
+      <div class="deck-stage">
+
+    <!-- ========== 变调页 ========== -->
+    <section class="card page page-lab is-active" id="lab" data-page="lab" role="tabpanel" aria-label="变调">
+      <div class="card-head">
+        <h2><svg class="wing" aria-hidden="true"><use href="#wing"/></svg>变调</h2>
+        <span class="tag" id="ffmpegTag">引擎检查中…</span>
+      </div>
+
+      <!-- 上传 -->
+      <div id="dropzone" class="dropzone">
+        <input type="file" id="fileInput" accept="audio/*" hidden />
+        <div class="dz-icon">♪</div>
+        <p class="dz-main">把音频拖到这里，或 <button class="link" id="pickBtn" type="button">点这里选文件</button></p>
+        <p class="dz-hint">mp3 / wav / m4a / flac / ogg，单个不超过 60MB</p>
+        <p class="dz-demo"><button class="link" id="demoBtn" type="button">没有文件？用示例片段试试</button></p>
+      </div>
+
+      <!-- 原曲信息 -->
+      <div class="track" id="trackInfo" hidden>
+        <div class="track-row">
+          <div>
+            <p class="label">当前音频</p>
+            <p class="filename" id="fileName">-</p>
+            <p class="meta" id="fileMeta">-</p>
+          </div>
+          <button class="ghost" id="resetBtn" type="button">换一首</button>
+        </div>
+        <audio id="origPlayer" controls preload="metadata"></audio>
+      </div>
+
+      <!-- 变调控制 -->
+      <div class="controls" id="controls" hidden>
+        <div class="keyrow">
+          <div class="field">
+            <label for="fromKey">原调</label>
+            <select id="fromKey"></select>
+          </div>
+          <span class="arrow">→</span>
+          <div class="field">
+            <label for="toKey">目标调</label>
+            <select id="toKey"></select>
+          </div>
+          <div class="field field-sm">
+            <label for="direction">方向</label>
+            <select id="direction">
+              <option value="auto">最近</option>
+              <option value="up">只升</option>
+              <option value="down">只降</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="shiftline" id="shiftReadout">选两个调，这里会算出差几个半音</p>
+
+        <div class="ctrl-row">
+          <label for="semiRange">半音</label>
+          <input type="range" id="semiRange" min="-12" max="12" step="1" value="-4" />
+          <output id="semiOut">-4</output>
+        </div>
+
+        <div class="quick">
+          <button type="button" data-step="-12">-12</button>
+          <button type="button" data-step="-5">-5</button>
+          <button type="button" data-step="-2">-2</button>
+          <button type="button" data-step="-1">-1</button>
+          <button type="button" data-step="1">+1</button>
+          <button type="button" data-step="2">+2</button>
+          <button type="button" data-step="5">+5</button>
+          <button type="button" data-step="12">+12</button>
+          <button type="button" data-step="reset" class="quick-reset">归零</button>
+        </div>
+
+        <button class="primary" id="transposeBtn" type="button">开始变调</button>
+        <p class="hint" id="status"></p>
+      </div>
+
+      <!-- 结果 -->
+      <div class="result" id="result" hidden>
+        <p class="label">变调结果 <span class="badge" id="resultBadge"></span></p>
+        <audio id="outPlayer" controls preload="metadata"></audio>
+        <div class="result-actions">
+          <a class="primary" id="downloadBtn" href="#" download>下载 mp3</a>
+          <button class="ghost" id="newShiftBtn" type="button">换个调再变一次</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 竖琴专区 ========== -->
+    <section class="card page page-harp" id="harp" data-page="harp" role="tabpanel" aria-label="乐器欣赏">
+      <div class="card-head">
+        <h2><svg class="wing" aria-hidden="true"><use href="#wing"/></svg>乐器欣赏</h2>
+        <span class="tag" id="harpTag">—</span>
+      </div>
+      <p class="hint">
+        上方三排标签：先选乐器（竖琴 / 古筝 / 钢琴），再选该乐器下的演奏者，最后选栏目。
+        视频用 YouTube 官方嵌入播放，不下载文件。
+        有公开发行曲谱的曲子（Isolde Harp 那几首古典改编）给了 IMSLP 公有领域谱子链接，能打印下来照着练；
+        即兴演奏和街头演出只配跟练方法。
+      </p>
+
+      <!-- 横向一：乐器 -->
+      <div class="filters" id="axisInstrument">
+        <button class="fchip active" type="button" data-instrument="竖琴">竖琴</button>
+        <button class="fchip" type="button" data-instrument="古筝">古筝</button>
+        <button class="fchip" type="button" data-instrument="钢琴">钢琴</button>
+      </div>
+
+      <!-- 横向二：演奏者（跟着乐器变，由数据生成） -->
+      <div class="filters" id="axisArtist"></div>
+
+      <!-- 纵向：栏目 -->
+      <div class="filters" id="axisSection">
+        <button class="fchip active" type="button" data-section="视频">演奏视频</button>
+        <button class="fchip" type="button" data-section="生成">生成 / 电音融合</button>
+        <button class="fchip" type="button" data-section="曲谱">曲谱</button>
+      </div>
+
+      <div id="secGen" hidden>
+      <h3 class="sub-head">生成一首竖琴曲</h3>
+      <p class="hint">
+        本地合成引擎按情绪、调性、速度生成和弦与琶音，再用加性合成做出竖琴音色。
+        不联网、不调用外部模型，每次生成都不一样。
+      </p>
+      <div class="gen-box">
+        <div class="gen-row">
+          <div class="field">
+            <label for="genMood">风格</label>
+            <select id="genMood"></select>
+          </div>
+          <div class="field">
+            <label for="genKey">调性</label>
+            <select id="genKey"></select>
+          </div>
+          <div class="field">
+            <label for="genTempo">速度 <span class="tempo-val" id="genTempoVal">—</span></label>
+            <input type="range" id="genTempo" min="40" max="130" step="2" value="66" />
+          </div>
+          <div class="field field-sm">
+            <label for="genLen">时长</label>
+            <select id="genLen">
+              <option value="20">20 秒</option>
+              <option value="30" selected>30 秒</option>
+              <option value="45">45 秒</option>
+              <option value="60">60 秒</option>
+            </select>
+          </div>
+        </div>
+        <button class="primary" id="genBtn" type="button">生成</button>
+        <p class="hint" id="genStatus"></p>
+        <div class="gen-result" id="genResult" hidden>
+          <audio id="genPlayer" controls preload="metadata"></audio>
+          <p class="gen-meta" id="genMeta"></p>
+          <div class="result-actions">
+            <a class="primary" id="genDownload" href="#" download>下载 mp3</a>
+            <button class="ghost" id="genShift" type="button">拿去变调</button>
+            <button class="ghost" id="genAgain" type="button">再生成一首</button>
+          </div>
+        </div>
+
+        <h4 class="artist-head" id="genHistoryHead" hidden>已生成的曲子 <span class="tag" id="genHistoryCount">0</span></h4>
+        <div class="score-list" id="genHistory" hidden></div>
+      </div>
+      </div>
+
+      <div id="secVideos">
+        <h3 class="sub-head" id="videoHead">视频与跟练</h3>
+        <div class="video-grid" id="videoGrid"></div>
+      </div>
+
+      <div id="secScores" hidden>
+      <h3 class="sub-head">曲谱</h3>
+      <p class="hint">
+        把自己的 PDF 或图片谱放进 <code>scores/</code> 目录，刷新就会出现在下面，点了直接在页面里看；
+        标题和说明写在 <code>data/scores.json</code>。
+      </p>
+      <div class="score-list" id="scoreList"></div>
+      <div class="score-viewer" id="scoreViewer" hidden>
+        <div class="sv-head">
+          <span id="svTitle">曲谱</span>
+          <button class="ghost sm" type="button" id="svClose">关闭</button>
+        </div>
+        <div class="sv-body" id="svBody"></div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ========== 抒情活动区 ========== -->
+    <section class="card page page-events" id="events" data-page="events" role="tabpanel" aria-label="活动分享">
+      <div class="card-head">
+        <h2><svg class="wing" aria-hidden="true"><use href="#wing"/></svg>活动分享</h2>
+        <span class="tag" id="eventCount">—</span>
+      </div>
+      <p class="hint" id="eventHint">
+        只收上海、杭州、苏州、无锡等江浙沪的竖琴 / 古筝音乐会与工作坊，带海报和购票入口；
+        按日期排，过期的会自动标「已结束」。数据在 <code>data/events.json</code>，改完刷新即可。
+      </p>
+      <div class="filters" id="eventInstruments">
+        <button class="fchip active" type="button" data-einst="全部">全部乐器</button>
+      </div>
+      <div class="filters" id="eventCities">
+        <button class="fchip active" type="button" data-city="全部">全部城市</button>
+        <button class="fchip" type="button" data-city="上海">上海</button>
+        <button class="fchip" type="button" data-city="杭州">杭州</button>
+        <button class="fchip" type="button" data-city="苏州">苏州</button>
+        <button class="fchip" type="button" data-city="无锡">无锡</button>
+      </div>
+      <div class="video-grid" id="eventList"></div>
+    </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <p>服务运行在一台本地电脑上，通过 Cloudflare 隧道分享；上传的音频与生成结果只保存在这台电脑。</p>
+  </footer>
+
+  <div class="toast" id="toast" hidden></div>
+  <script src="/app.js"></script>
+  <script src="/deck.js" defer></script>
+  <script src="/effects.js" defer></script>
+</body>
+</html>

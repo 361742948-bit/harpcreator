@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>星声 · Logo 规范</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; width: 1400px; padding: 52px 60px 40px; background: #fff;
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", sans-serif; color: #2A2340;
+    -webkit-font-smoothing: antialiased; }
+  .top { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; }
+  .top h1 { font-size: 22px; margin: 0 0 6px; letter-spacing: .02em; }
+  .top p { margin: 0; font-size: 12.5px; color: #8A83A8; }
+  .tag { font-size: 10px; letter-spacing: .22em; color: #B9B2CE; font-weight: 700; }
+
+  .grid { display: grid; gap: 18px; margin-bottom: 18px; }
+  .row1 { grid-template-columns: 1.25fr 1fr 1fr; }
+  .row2 { grid-template-columns: 1.15fr 1fr; }
+  .row3 { grid-template-columns: 1.5fr 1fr; }
+
+  .card { border-radius: 20px; border: 1px solid #F0EBFA; padding: 24px; background: #FDFCFF; }
+  .card.dark { background: #191634; border-color: #191634; color: #fff; }
+  .card.tint { background: linear-gradient(135deg, #FFF6FB, #F6F3FF 48%, #FDF6E6); border-color: #F3EDFF; }
+  .cap { font-size: 10.5px; letter-spacing: .16em; color: #A79FC4; font-weight: 700; margin-bottom: 14px; }
+  .dark .cap { color: #B9B0FF; }
+  .note { font-size: 11px; color: #8A83A8; margin: 10px 0 0; line-height: 1.75; }
+  .dark .note { color: #B9B0FF; }
+
+  .center { display: grid; place-items: center; }
+  .bigmark { width: 230px; height: 230px; }
+  .card.tint .center, .card.dark .center { padding: 6px 0 14px; }
+
+  .lock { width: 100%; }
+
+  .scale { display: flex; align-items: flex-end; gap: 26px; padding: 14px 4px 8px; }
+  .scale div { text-align: center; }
+  .scale span { display: block; font-size: 9.5px; color: #A79FC4; margin-top: 8px; }
+
+  .swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .chip { height: 76px; border-radius: 13px; margin-bottom: 9px; border: 1px solid rgba(42,35,64,.05); }
+  .swatches b { font-size: 11.5px; display: block; margin-bottom: 2px; }
+  .swatches em { font-style: normal; font-size: 10.5px; color: #8A83A8; font-variant-numeric: tabular-nums; }
+  .swatches small { display: block; font-size: 10px; color: #A79FC4; margin-top: 4px; line-height: 1.5; }
+  .chips2 { grid-template-columns: repeat(5, 1fr); margin-top: 12px; }
+  .chips2 .chip { height: 44px; }
+
+  .type div { display: flex; align-items: baseline; gap: 12px; padding: 8px 0; border-bottom: 1px solid #F5F1FC; }
+  .type div:last-child { border: 0; }
+  .type .k { width: 60px; font-size: 10px; letter-spacing: .14em; color: #A79FC4; font-weight: 700; flex: none; }
+  .type .s { width: 74px; font-size: 10px; color: #A79FC4; flex: none; font-variant-numeric: tabular-nums; }
+  .grad { background: linear-gradient(100deg,#FF8FC0,#8B76FF 52%,#6F56E8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; font-size: 12px; line-height: 1.9; color: #5B5478; }
+  .rules b { color: #2A2340; }
+  .rules .h { font-size: 11px; letter-spacing: .14em; color: #A79FC4; font-weight: 700; margin-bottom: 8px; }
+  .ok { color: #2FA894; }
+  .no { color: #E8749E; }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div>
+    <h1>星声 · Logo 规范</h1>
+    <p>琴架 + 琴弦化作波形 · 浅紫 + 维也纳金</p>
+  </div>
+  <div class="tag">STAR SOUND LAB · V1.0</div>
+</div>
+
+<div class="grid row1">
+  <div class="card">
+    <div class="cap">主标 / PRIMARY</div>
+    <div class="center"><svg class="bigmark" viewBox="0 0 120 120"><use href="#m"/></svg></div>
+    <p class="note">琴架 = 竖琴；四根琴弦是轻轻起伏的波形 = 电音。渐变从左上的樱粉走到右下的深紫，拨弦的一点是维也纳金。</p>
+  </div>
+
+  <div class="card tint">
+    <div class="cap">浅底使用 / ON TINT</div>
+    <div class="center"><svg width="170" height="170" viewBox="0 0 120 120"><use href="#m"/></svg></div>
+    <p class="note">放在浅色照片、浅渐变上也清楚。四周留白 ≥ 标记宽度的 1/4。</p>
+  </div>
+
+  <div class="card dark">
+    <div class="cap">深底反白 / INVERSE</div>
+    <div class="center"><svg width="170" height="170" viewBox="0 0 120 120"><use href="#mi"/></svg></div>
+    <p class="note">深色底用提亮版渐变：粉 → 紫，整体加亮，别把原色直接压上去。</p>
+  </div>
+</div>
+
+<div class="grid row2">
+  <div class="card">
+    <div class="cap">横版组合 / LOCKUP</div>
+    <svg class="lock" viewBox="0 0 348 120" width="100%" height="118">
+      <use href="#m" x="0" y="0" width="120" height="120"/>
+      <text x="140" y="72" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="56" font-weight="600" letter-spacing="3" fill="#2A2340">星声</text>
+      <text x="142" y="100" font-family="PingFang SC, Hiragino Sans GB, sans-serif" font-size="11" font-weight="600" letter-spacing="4.6" fill="#8A83A8">STAR SOUND LAB</text>
+    </svg>
+    <p class="note">「星声」PingFang SC Semibold 字距 +3；英文全大写字距 +4.6。图形与文字间距 = 标记宽度的 1/5（24 单位）。</p>
+  </div>
+
+  <div class="card">
+    <div class="cap">单色与小尺寸 / MONO &amp; SMALL</div>
+    <div class="scale">
+      <svg width="88" height="88" viewBox="0 0 120 120"><use href="#mm"/></svg>
+      <div><svg width="60" height="60" viewBox="0 0 120 120"><use href="#m"/></svg></div>
+      <div><svg width="36" height="36" viewBox="0 0 120 120"><use href="#m"/></svg></div>
+      <div><svg width="24" height="24" viewBox="0 0 120 120"><use href="#fav"/></svg><span>24</span></div>
+      <div><svg width="16" height="16" viewBox="0 0 120 120"><use href="#fav"/></svg><span>16</span></div>
+    </div>
+    <p class="note">≤ 32px 换三弦简化版并加粗笔画；16px 下仍是「琴架 + 弦」。单色版 #2A2340，#7E77A0 做弦。</p>
+  </div>
+</div>
+
+<div class="grid row3">
+  <div class="card">
+    <div class="cap">品牌色 / PALETTE</div>
+    <div class="swatches">
+      <div><div class="chip" style="background:linear-gradient(135deg,#FF8FC0,#8B76FF 55%,#6F56E8)"></div>
+        <b>晨光渐变</b><em>#FF8FC0→#8B76FF→#6F56E8</em><small>Logo、主按钮、大标题</small></div>
+      <div><div class="chip" style="background:#FF8FC0"></div>
+        <b>樱粉</b><em>#FF8FC0</em><small>标签、高亮、渐变起点</small></div>
+      <div><div class="chip" style="background:#8B76FF"></div>
+        <b>雾紫</b><em>#8B76FF</em><small>主强调色、链接</small></div>
+      <div><div class="chip" style="background:#6F56E8"></div>
+        <b>深紫</b><em>#6F56E8</em><small>渐变落点、深色场景</small></div>
+      <div><div class="chip" style="background:#2A2340"></div>
+        <b>夜紫墨</b><em>#2A2340</em><small>标题与正文</small></div>
+    </div>
+    <div class="swatches chips2">
+      <div><div class="chip" style="background:#FFF6FB"></div><b>樱雾</b><em>#FFF6FB</em></div>
+      <div><div class="chip" style="background:#F6F3FF"></div><b>云紫</b><em>#F6F3FF</em></div>
+      <div><div class="chip" style="background:#FDF6E6"></div><b>淡金</b><em>#FDF6E6</em></div>
+      <div><div class="chip" style="background:#8A83A8"></div><b>次级文字</b><em>#8A83A8</em></div>
+      <div><div class="chip" style="background:#F0EBFA"></div><b>描边</b><em>#F0EBFA</em></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cap">字阶 / TYPE SCALE</div>
+    <div class="type">
+      <div><span class="k">H1</span><span class="s">40 / 600</span><span class="grad" style="font-size:19px;font-weight:600">挪到你唱得上的调</span></div>
+      <div><span class="k">H2</span><span class="s">17 / 600</span><span style="font-size:16px;font-weight:600">曲库 · 试听 · 学习</span></div>
+      <div><span class="k">BODY</span><span class="s">14 / 400</span><span style="font-size:13px;color:#5B5478">上传本地音频，选原调和目标调</span></div>
+      <div><span class="k">SMALL</span><span class="s">12 / 400</span><span style="font-size:11.5px;color:#8A83A8">mp3 / wav / m4a / flac，单个不超过 60MB</span></div>
+      <div><span class="k">CAP</span><span class="s">11 / 600</span><span style="font-size:10px;letter-spacing:.18em;color:#8A83A8">STAR SOUND LAB</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="rules">
+    <div>
+      <div class="h">用法 / USAGE</div>
+      <span class="ok">✓</span> 留白 ≥ 标记宽度 1/4<br>
+      <span class="ok">✓</span> 最小 16px（用简化版）<br>
+      <span class="ok">✓</span> 单色印刷用 #2A2340<br>
+      <span class="ok">✓</span> 与外文字体组合时用横版
+    </div>
+    <div>
+      <div class="h">禁止 / DON'T</div>
+      <span class="no">✗</span> 拉伸、旋转、压扁<br>
+      <span class="no">✗</span> 加投影、描边、外发光<br>
+      <span class="no">✗</span> 改配色（只能用渐变 / 单色 / 反白）<br>
+      <span class="no">✗</span> 换掉琴弦的波形，改成直线
+    </div>
+    <div>
+      <div class="h">文件 / FILES</div>
+      mark.svg · 主标（深底用 mark-inverse.svg）<br>
+      mark-mono.svg · 单色<br>
+      lockup-horizontal.svg · 横版组合<br>
+      favicon.svg · 24 / 16px 简化版
+    </div>
+  </div>
+</div>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="f2" x1="30" y1="10" x2="92" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF8FC0"/><stop offset="0.46" stop-color="#8B76FF"/><stop offset="1" stop-color="#6F56E8"/>
+    </linearGradient>
+    <linearGradient id="s2" x1="40" y1="20" x2="90" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFA9CD"/><stop offset="0.5" stop-color="#A99AF7"/><stop offset="1" stop-color="#6FDCCB"/>
+    </linearGradient>
+    <linearGradient id="fi" x1="30" y1="10" x2="92" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFB3D3"/><stop offset="0.46" stop-color="#B2A2FF"/><stop offset="1" stop-color="#B9A3FF"/>
+    </linearGradient>
+    <linearGradient id="si" x1="40" y1="20" x2="90" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD0E4"/><stop offset="0.5" stop-color="#CCC2FF"/><stop offset="1" stop-color="#A4F2E8"/>
+    </linearGradient>
+
+    <symbol id="m" viewBox="0 0 120 120">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M38 14 V106" stroke="url(#f2)" stroke-width="6"/>
+        <path d="M38 14 C62 14 83 22 89 40" stroke="url(#f2)" stroke-width="6"/>
+        <path d="M89 40 L58 106 H38" stroke="url(#f2)" stroke-width="6"/>
+        <path d="M46 16 q2 15 0 30 q-2 15 0 30 q2 15 0 26 q-2 12 0 4" stroke="url(#s2)" stroke-width="2.2"/>
+        <path d="M57 18 q2 14 0 28 q-2 14 0 28 q2 14 0 26 q-2 12 0 6" stroke="url(#s2)" stroke-width="2.2"/>
+        <path d="M68 21 q2 12 0 24 q-2 12 0 24 q2 10 0 15" stroke="url(#s2)" stroke-width="2.2"/>
+        <path d="M79 25 q2 9 0 18 q-2 9 0 17" stroke="url(#s2)" stroke-width="2.2"/>
+        <circle cx="93" cy="21" r="2.5" fill="#C9A227"/>
+      </g>
+    </symbol>
+    <symbol id="mi" viewBox="0 0 120 120">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M38 14 V106" stroke="url(#fi)" stroke-width="6"/>
+        <path d="M38 14 C62 14 83 22 89 40" stroke="url(#fi)" stroke-width="6"/>
+        <path d="M89 40 L58 106 H38" stroke="url(#fi)" stroke-width="6"/>
+        <path d="M46 16 q2 15 0 30 q-2 15 0 30 q2 15 0 26 q-2 12 0 4" stroke="url(#si)" stroke-width="2.2"/>
+        <path d="M57 18 q2 14 0 28 q-2 14 0 28 q2 14 0 26 q-2 12 0 6" stroke="url(#si)" stroke-width="2.2"/>
+        <path d="M68 21 q2 12 0 24 q-2 12 0 24 q2 10 0 15" stroke="url(#si)" stroke-width="2.2"/>
+        <path d="M79 25 q2 9 0 18 q-2 9 0 17" stroke="url(#si)" stroke-width="2.2"/>
+        <circle cx="93" cy="21" r="2.5" fill="#C9A227"/>
+      </g>
+    </symbol>
+    <symbol id="mm" viewBox="0 0 120 120">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M38 14 V106" stroke="#2A2340" stroke-width="6"/>
+        <path d="M38 14 C62 14 83 22 89 40" stroke="#2A2340" stroke-width="6"/>
+        <path d="M89 40 L58 106 H38" stroke="#2A2340" stroke-width="6"/>
+        <path d="M46 16 q2 15 0 30 q-2 15 0 30 q2 15 0 26 q-2 12 0 4" stroke="#7E77A0" stroke-width="2.2"/>
+        <path d="M57 18 q2 14 0 28 q-2 14 0 28 q2 14 0 26 q-2 12 0 6" stroke="#7E77A0" stroke-width="2.2"/>
+        <path d="M68 21 q2 12 0 24 q-2 12 0 24 q2 10 0 15" stroke="#7E77A0" stroke-width="2.2"/>
+        <path d="M79 25 q2 9 0 18 q-2 9 0 17" stroke="#7E77A0" stroke-width="2.2"/>
+      </g>
+    </symbol>
+    <symbol id="fav" viewBox="0 0 120 120">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M38 14 V106" stroke="#7B64F2" stroke-width="9"/>
+        <path d="M38 14 C62 14 83 22 89 40" stroke="#7B64F2" stroke-width="9"/>
+        <path d="M89 40 L58 106 H38" stroke="#7B64F2" stroke-width="9"/>
+        <path d="M52 18 q3 22 0 44 q-3 22 0 42" stroke="#7B64F2" stroke-width="5"/>
+        <path d="M68 22 q3 18 0 36 q-3 18 0 22" stroke="#7B64F2" stroke-width="5"/>
+        <path d="M81 27 q3 12 0 24" stroke="#7B64F2" stroke-width="5"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+</body>
+</html>

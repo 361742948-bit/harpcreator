@@ -1,0 +1,63 @@
+{
+  "fetchedAt": "2026-11-21 16:48",
+  "sourceNote": "上海场次由上海乐历自动抓取；杭州/苏州/无锡为人工核实",
+  "events": [
+    {
+      "title": "未来大师：心的形状——竖琴与萨克斯二重奏音乐会",
+      "date": "2026-12-13",
+      "time": "以现场为准",
+      "city": "上海",
+      "venue": "上海东方艺术中心",
+      "price": "以购票页为准",
+      "summary": "竖琴 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_1480ea033ebc.png",
+      "url": "https://shanghaiconcerts.com/concerts/future-masters-shape-of-my-heart-harp-saxophone-duo",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "竖琴",
+      "tags": [
+        "竖琴",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    },
+    {
+      "title": "【玲珑国乐】筝韵流芳——浙派古筝音乐会",
+      "date": "2026-12-27",
+      "time": "14:00",
+      "city": "上海",
+      "venue": "上海音乐厅",
+      "price": "¥180",
+      "summary": "古筝 类演出，来自上海乐历演出日历；具体曲目与阵容请以购票页为准。",
+      "poster": "/poster/auto_3dad7fec71fe.jpg",
+      "url": "https://shanghaiconcerts.com/concerts/linglong-guoyue-zhejiang-guzheng",
+      "source": "上海乐历 shanghaiconcerts.com（自动抓取）",
+      "instrument": "古筝",
+      "tags": [
+        "古筝",
+        "上海",
+        "自动收录"
+      ],
+      "auto": true
+    },
+    {
+      "title": "万川归海——古曲与古诗词今唱主题音乐会",
+      "date": "2026-12-05",
+      "time": "以现场为准",
+      "city": "杭州",
+      "venue": "杭州剧院 · 小剧场",
+      "price": "¥100 起",
+      "summary": "古曲与古诗词今唱主题，民乐编制。票页没有列曲目单，是否以古筝为主需要购票前确认。",
+      "poster": "",
+      "url": "https://www.qianpiaotong.com/mobile/Product/68666.shtml",
+      "source": "购票通 qianpiaotong.com",
+      "tags": [
+        "民乐",
+        "古诗词",
+        "杭州",
+        "民乐"
+      ],
+      "instrument": "民乐"
+    }
+  ]
+}

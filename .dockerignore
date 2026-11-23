@@ -1,0 +1,9 @@
+vendor/
+.home/
+.pipcache/
+generated/
+uploads/
+output/
+media/
+__pycache__/
+*.pyc

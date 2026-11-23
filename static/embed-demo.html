@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>嵌入示例 · 把竖琴专区放进你自己的网页</title>
+  <style>
+    /* 这一页故意写成“别人的网站”的样子，用来演示 iframe 嵌进来的效果 */
+    :root {
+      --ink: #1d2230;
+      --ink2: #6b7280;
+      --line: #e6e3ee;
+      --accent: #7c6cff;
+      --bg: #fbfaff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 80px; }
+
+    /* 假装这是一个已有网站的头 */
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 0; border-bottom: 1px solid var(--line);
+    }
+    .site-logo { font-weight: 700; letter-spacing: 0.02em; }
+    .site-nav nav a {
+      color: var(--ink2); text-decoration: none; font-size: 13px; margin-left: 22px;
+    }
+    .site-nav nav a:hover { color: var(--accent); }
+
+    .intro { padding: 54px 0 30px; }
+    .intro p.kicker {
+      font-size: 11px; letter-spacing: 0.28em; color: var(--accent);
+      text-transform: uppercase; margin: 0 0 12px; font-weight: 600;
+    }
+    .intro h1 {
+      font-size: clamp(26px, 4vw, 38px); line-height: 1.25; margin: 0 0 14px;
+      letter-spacing: -0.02em;
+    }
+    .intro p.lead { color: var(--ink2); line-height: 1.75; margin: 0; max-width: 620px; font-size: 14px; }
+
+    .embed-slot {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 10px;
+      margin-top: 26px;
+      box-shadow: 0 18px 50px rgba(80, 70, 120, 0.08);
+    }
+    .embed-slot iframe {
+      width: 100%;
+      height: 1100px;
+      border: 0;
+      border-radius: 12px;
+      display: block;
+      background: #fff;
+    }
+    .slot-caption {
+      font-size: 12px; color: var(--ink2);
+      padding: 10px 8px 4px;
+    }
+
+    .code-block {
+      margin-top: 34px;
+      background: #171a22;
+      color: #dfe3ec;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .code-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 14px; font-size: 12px; color: #98a1b3;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .code-head button {
+      background: rgba(255, 255, 255, 0.08); color: #dfe3ec;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px; padding: 5px 12px; font-size: 12px; cursor: pointer;
+      font-family: inherit;
+    }
+    .code-head button:hover { background: rgba(255, 255, 255, 0.16); }
+    pre {
+      margin: 0; padding: 16px; overflow-x: auto;
+      font-size: 12.5px; line-height: 1.75;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .note {
+      margin-top: 22px; padding: 16px 18px;
+      background: #f4f2ff; border: 1px solid #e0daff; border-radius: 14px;
+      font-size: 13px; line-height: 1.75; color: #3c3558;
+    }
+    .note b { color: #2a2450; }
+    .note code {
+      background: #e9e5ff; padding: 1px 6px; border-radius: 5px; font-size: 12px;
+    }
+    .muted { color: var(--ink2); font-size: 12px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- 这一段是在“模拟你的网站” -->
+    <header class="site-nav">
+      <div class="site-logo">你的网站</div>
+      <nav>
+        <a href="#">首页</a>
+        <a href="#">文章</a>
+        <a href="#">关于</a>
+      </nav>
+    </header>
+
+    <section class="intro">
+      <p class="kicker">Embed Demo</p>
+      <h1>把竖琴专区嵌进你自己的页面</h1>
+      <p class="lead">
+        下面这块就是被嵌入的内容：变调台、竖琴视频、AI 生成竖琴曲、曲谱区。
+        外层是你网站的页头，内层是 <code>?embed=1</code> 模式的应用，两边互不影响。
+      </p>
+    </section>
+
+    <div class="embed-slot">
+      <iframe
+        src="/?embed=1"
+        title="星声竖琴专区"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="slot-caption">↑ 这里是一整个 iframe，滚动是独立的，不会带动外层页面。</p>
+    </div>
+
+    <div class="code-block">
+      <div class="code-head">
+        <span>复制这段贴到你网站的「自定义 HTML」里</span>
+        <button id="copyBtn" type="button">复制代码</button>
+      </div>
+      <pre id="snippet">&lt;iframe
+  src="https://你的域名/?embed=1"
+  title="星声竖琴专区"
+  style="width:100%;height:900px;border:0;border-radius:16px;overflow:hidden"
+  loading="lazy"
+  allow="autoplay; encrypted-media; picture-in-picture"
+  referrerpolicy="no-referrer-when-downgrade"&gt;
+&lt;/iframe&gt;</pre>
+    </div>
+
+    <div class="note">
+      <b>为什么这里能跑、你网站里不能直接跑：</b>
+      变调要 ffmpeg、生成竖琴曲要 numpy，都是后端算的。所以这个 iframe 的
+      <code>src</code> 必须指向一台能跑 Python 的机器（本机演示就是 127.0.0.1:8765，
+      上线时要换成你部署好的域名）。
+    </div>
+    <p class="muted">演示地址：http://127.0.0.1:8765/embed-demo.html</p>
+  </div>
+
+  <script>
+    // 复制按钮：直接复制 pre 里的代码
+    document.getElementById("copyBtn").addEventListener("click", async () => {
+      const code = document.getElementById("snippet").textContent;
+      try {
+        await navigator.clipboard.writeText(code);
+        document.getElementById("copyBtn").textContent = "已复制";
+      } catch (e) {
+        // 剪贴板不可用（比如非 https）时退化成选中文本
+        const range = document.createRange();
+        range.selectNodeContents(document.getElementById("snippet"));
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        document.getElementById("copyBtn").textContent = "已选中，按 ⌘C";
+      }
+      setTimeout(() => (document.getElementById("copyBtn").textContent = "复制代码"), 2200);
+    });
+  </script>
+</body>
+</html>
